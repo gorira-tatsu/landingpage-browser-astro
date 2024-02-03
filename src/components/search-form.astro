@@ -1,0 +1,19 @@
+---
+---
+
+<div id="search-container">
+    <input type="text" id="search-bar" placeholder="Search Google">
+</div>
+
+<script>
+    const searchQuery = document.getElementById("search-bar") as HTMLInputElement;
+
+    searchQuery.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" && event.keyCode == 13) {
+            if (searchQuery.value !== "") {
+                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchQuery.value)}`;
+                window.location.href = searchUrl;
+            }
+        }
+    });
+</script>

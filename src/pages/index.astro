@@ -1,0 +1,29 @@
+---
+import MySiteLayout from '../components/main.astro';
+import SearchForm from '../components/search-form.astro';
+import BookmarkList from '../components/bookmark.astro';
+import Clock from '../components/clock.astro';
+
+import '../style.css';
+
+const bookmarks = [
+	{url : "https://scrapbox.io/nlpapers", title : "NLPapers", icon : "bx:archive"},
+	{url : "https://scrapbox.io/gorira-private", title : "google", icon : "bx:archive"},
+	{url : "https://twitter.com", title : "twitter", icon : "bx:archive"},
+]
+
+---
+<MySiteLayout>
+	<div class="top-content">
+		<h1 id="title">hogehoge</h1>
+		<SearchForm></SearchForm>
+	</div>
+	<div class="content">
+		<div class="bookmarks">
+			{bookmarks.map(bookmark => (
+				<BookmarkList url={bookmark.url} title={bookmark.title} icon_name={bookmark.icon}></BookmarkList>
+			))}
+		</div>
+		<Clock></Clock>
+	</div>
+</MySiteLayout>

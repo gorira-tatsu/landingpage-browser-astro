@@ -1,0 +1,12 @@
+---
+const { title } = Astro.props;
+const { icon_name } = Astro.props;
+const { url } = Astro.props;
+
+import { Icon } from 'astro-icon/components'
+
+---
+<a class = "bookmark" href={ url }>
+    <Icon name = { icon_name }/>
+    { title }
+</a>
