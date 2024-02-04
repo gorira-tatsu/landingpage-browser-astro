@@ -1,8 +1,10 @@
 FROM node:lts-alpine
 WORKDIR /app
-COPY . .
+COPY package.json /app
 RUN yarn install
+
+COPY . /app
 
 EXPOSE 4321
 
-CMD ["yarn","run", "dev", "--host", "0.0.0.0", "--port", "4321"]
+CMD ["yarn","run", "dev"]

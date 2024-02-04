@@ -11,8 +11,8 @@
     const nyTime = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
     const herTime = nyTime.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit'});
 
-    document.getElementById('mytime').innerHTML = `My Time: ${myTime}`;
-    document.getElementById('hertime').innerHTML = `Her Time: ${herTime}`;
+    document.getElementById('mytime')!.innerHTML = `My Time: ${myTime}`;
+    document.getElementById('hertime')!.innerHTML = `Her Time: ${herTime}`;
 }
 
 updateClocks();
